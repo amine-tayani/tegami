@@ -1,17 +1,6 @@
-"use client";
-
 import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import {
-  Cable,
-  Layers2,
-  Layers3,
-  Newspaper,
-  Search,
-  ToggleLeft,
-  TrendingUp,
-  TvMinimal,
-} from "lucide-react";
+import { Layers2, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   CommandDialog,
@@ -22,43 +11,10 @@ import {
   CommandList,
 } from "./ui/command";
 import { cn } from "@/lib/utils";
-import { NavLink } from "./mobile-nav";
+import { commandSidenavLinks } from "@/config/data";
 
 export function CommandMenu({ ...props }: DialogProps) {
   const [open, setOpen] = React.useState(false);
-
-  const links: NavLink[] = [
-    {
-      title: "Trending",
-      icon: TrendingUp,
-      href: "/trending",
-    },
-    {
-      title: "App Categories",
-      icon: Layers3,
-      href: "/categories",
-    },
-    {
-      title: "Screens",
-      icon: TvMinimal,
-      href: "/screens",
-    },
-    {
-      title: "Marketing Pages",
-      icon: Newspaper,
-      href: "/marketing",
-    },
-    {
-      title: "UI Elements",
-      icon: ToggleLeft,
-      href: "/elements",
-    },
-    {
-      title: "Flows",
-      icon: Cable,
-      href: "/flows",
-    },
-  ];
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -86,12 +42,12 @@ export function CommandMenu({ ...props }: DialogProps) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-14 w-full justify-start rounded-full text-base font-medium bg-muted/70 text-muted-foreground/60 shadow-none md:w-60 lg:w-72 xl:w-[460px]"
+          "relative h-10 lg:h-14 w-full justify-start rounded-full text-base font-medium text-muted-foreground bg-muted/70 shadow-none md:w-60 lg:w-72 xl:w-[460px]"
         )}
         onClick={() => setOpen(true)}
         {...props}
       >
-        <Search className="size-6 ml-3 mr-1" />
+        <Search className="size-4 md:size-6 ml-3 mr-1 text-foreground" />
         <span className="hidden lg:inline-flex">Search on Web...</span>
         <span className="inline-flex lg:hidden">Search...</span>
       </Button>
@@ -125,15 +81,15 @@ export function CommandMenu({ ...props }: DialogProps) {
           <CommandEmpty>No results found.</CommandEmpty>
           <div className="grid grid-cols-3">
             <CommandGroup className="w-60 font-semibold mt-3">
-              {links.map((navItem) => (
+              {commandSidenavLinks.map((link) => (
                 <CommandItem
-                  key={navItem.href}
-                  value={navItem.title}
+                  key={link.href}
+                  value={link.title}
                   className="text-base first:bg-neutral-700/60 rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300"
                 >
-                  <navItem.icon className="text-muted-foreground size-5" />
-                  {navItem.title}
-                </CommandItem>echo "# tegami" >> README.md
+                  <link.icon className="text-muted-foreground size-5" />
+                  {link.title}
+                </CommandItem>
               ))}
             </CommandGroup>
             <div className="col-span-2 mt-5">
