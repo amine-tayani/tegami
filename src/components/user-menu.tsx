@@ -1,14 +1,6 @@
 import { Button } from "./ui/button";
 
-import {
-  BoltIcon,
-  BookOpenIcon,
-  Layers2Icon,
-  LogOutIcon,
-  PinIcon,
-  UserPenIcon,
-  UserRound,
-} from "lucide-react";
+import { Bookmark, Globe, Moon, Settings, UserRound } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,50 +15,87 @@ export default function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
-          <UserRound size={16} className="opacity-60" aria-hidden="true" />
+        <Button
+          variant="secondary"
+          size="icon"
+          className="overflow-hidden rounded-full ml-2"
+        >
+          <UserRound size={16} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="max-w-64">
+      <DropdownMenuContent
+        side="bottom"
+        align="end"
+        className="max-w-80 min-w-56 bg-menu-background mt-1.5"
+      >
         <DropdownMenuLabel className="flex min-w-0 flex-col">
-          <span className="text-foreground truncate text-sm font-medium">
-            Keith Kennedy
+          <span className="text-foreground truncate text-base font-medium">
+            mitomaru x
           </span>
-          <span className="text-muted-foreground truncate text-xs font-normal">
-            k.kennedy@originui.com
+          <span className="text-muted-foreground truncate font-normal">
+            orochi.hyakkimaru@gmail.com
           </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <BoltIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 1</span>
+            <Bookmark className="opacity-60 size-5" />
+            <span className="text-base text-primary/85 font-semibold">
+              Saved
+            </span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Layers2Icon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 2</span>
+            <Globe className="opacity-60 size-5" />
+            <span className="text-base text-primary/85 font-semibold">
+              Community
+            </span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <BookOpenIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 3</span>
+            <Settings className="opacity-60 size-5" />
+            <span className="text-base text-primary/85 font-semibold">
+              Settings
+            </span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <PinIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 4</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <UserPenIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 5</span>
+            <Moon className="opacity-60 size-5" />
+            <span className="text-base text-primary/85 font-semibold">
+              Theme
+            </span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
+
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOutIcon size={16} className="opacity-60" aria-hidden="true" />
-          <span>Logout</span>
-        </DropdownMenuItem>
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <span className="text-base text-primary/85 font-semibold ">
+              Pricing
+            </span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <span className="text-base text-primary/85 font-semibold ">
+              Changelog
+            </span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <span className="text-base text-primary/85 font-semibold ">
+              Blog
+            </span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <span className="text-base text-primary/85 font-semibold ">
+              Support
+            </span>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <span className="text-base text-primary/85 font-semibold ">
+              Logout
+            </span>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );

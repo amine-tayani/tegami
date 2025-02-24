@@ -42,7 +42,7 @@ export function CommandMenu({ ...props }: DialogProps) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-10 lg:h-14 w-full justify-start rounded-full text-base font-medium text-muted-foreground bg-muted/70 shadow-none md:w-60 lg:w-72 xl:w-[460px]"
+          "relative h-10 lg:h-14 w-full justify-start rounded-full text-base font-medium text-muted-foreground bg-neutral-700 shadow-none md:w-60 lg:w-72 xl:w-[460px]"
         )}
         onClick={() => setOpen(true)}
         {...props}
@@ -80,7 +80,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           </div>
           <CommandEmpty>No results found.</CommandEmpty>
           <div className="grid grid-cols-3">
-            <CommandGroup className="w-60 font-semibold mt-3">
+            <CommandGroup className="w-60 md:w-52 font-semibold mt-3 hidden md:block">
               {commandSidenavLinks.map((link) => (
                 <CommandItem
                   key={link.href}
@@ -92,8 +92,12 @@ export function CommandMenu({ ...props }: DialogProps) {
                 </CommandItem>
               ))}
             </CommandGroup>
-            <div className="col-span-2 mt-5">
-              <div className="flex gap-3">
+
+            <div className="col-span-4 md:col-span-2 mt-5 ">
+              <p className="text-muted-foreground mb-4 text-sm md:hidden">
+                Trending Apps
+              </p>
+              <div className="flex gap-3 overflow-x-auto">
                 <img
                   className="rounded-2xl hover:scale-105 transition-transform ease-in-out duration-300"
                   src="https://bytescale.mobbin.com/FW25bBB/image/content/app_logos/dbf29a3f-f163-44eb-9525-fa449d2304a9.webp?f=png&w=400&q=85&fit=shrink-cover"
@@ -139,7 +143,7 @@ export function CommandMenu({ ...props }: DialogProps) {
               </div>
               <div className="mt-4">
                 <p className="text-muted-foreground text-sm">Screens</p>
-                <div className="flex gap-x-2 mt-4">
+                <div className="flex overflow-x-auto gap-x-2 mt-4">
                   <div className="group relative aspect-square bg-muted size-[120px] rounded-2xl">
                     <p className="font-medium text-base p-2 text-primary">
                       Signup

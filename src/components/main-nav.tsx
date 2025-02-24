@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { CommandMenu } from "./command-menu";
 import { mainNav } from "@/config/data";
 import { TegamiLogo } from "./logo";
+import UserMenu from "./user-menu";
 
 export default function SiteHeader() {
   return (
@@ -38,6 +39,7 @@ export default function SiteHeader() {
             </Button>
           </nav>
         </div>
+        <UserMenu />
       </div>
     </div>
   );
