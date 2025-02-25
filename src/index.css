@@ -86,11 +86,4 @@
   .container {
     @apply px-4 xl:px-6 mx-auto max-w-screen-2xl;
   }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }

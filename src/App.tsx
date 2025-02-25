@@ -1,4 +1,4 @@
-import SiteHeader from "./components/main-nav";
+import SiteHeader from "./components/site-header";
 
 export default function App() {
   return (

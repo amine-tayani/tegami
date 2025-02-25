@@ -1,10 +1,10 @@
 import { Bookmark, Globe } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { CommandMenu } from "./command-menu";
-import { mainNav } from "@/config/data";
-import { TegamiLogo } from "./logo";
 import UserMenu from "./user-menu";
+import { CommandMenu } from "./command-menu";
+import { TegamiLogo } from "./logo";
+import { mainNav } from "@/config/data";
 
 export default function SiteHeader() {
   return (
@@ -27,14 +27,12 @@ export default function SiteHeader() {
             ))}
           </nav>
         </div>
-        <div className="flex justify-center flex-1">
-          <CommandMenu />
-        </div>
+        <CommandMenu />
         <div className="hidden lg:flex flex-1 items-center justify-between gap-2 md:justify-end">
-          <nav className="flex items-center gap-4">
+          <nav className="flex items-center gap-x-8">
             <Bookmark />
             <Globe />
-            <Button className="relative justify-start text-lg h-10 px-7 bg-blue-500 hover:bg-blue-600 font-medium text-foreground rounded-full shadow-none">
+            <Button className="relative justify-start px-3 mr-3 bg-blue-500 hover:bg-blue-600 font-semibold text-foreground rounded-full shadow-none">
               Get Pro
             </Button>
           </nav>

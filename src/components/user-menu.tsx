@@ -17,10 +17,9 @@ export default function UserMenu() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="secondary"
-          size="icon"
-          className="overflow-hidden rounded-full ml-2"
+          className="flex size-12 items-center justify-center rounded-full ml-2"
         >
-          <UserRound size={16} />
+          <UserRound className="size-6" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
