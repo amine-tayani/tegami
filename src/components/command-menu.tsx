@@ -43,7 +43,9 @@ export function CommandMenu({ ...props }: DialogProps) {
       <Button
         variant="outline"
         className={cn(
-          "min-w-0 flex items-center sm:mx-12 xl:mx-32 gap-x-2 cursor-pointer transition-colors ease-out relative h-10 lg:h-12 w-full justify-start rounded-full text-base font-medium text-muted-foreground bg-menu-background shadow-none"
+          "min-w-0 flex justify-start  items-center sm:mx-12 xl:mx-32 gap-x-2",
+          "cursor-pointer transition-colors ease-out relative h-10 lg:h-12 w-full",
+          "rounded-full text-base font-medium text-muted-foreground bg-menu-background shadow-none"
         )}
         onClick={() => setOpen(true)}
         {...props}
@@ -131,7 +133,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                             <img
                               src="https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/static/dictionary/web_screen_patterns/signup_01.png"
                               alt={screen}
-                              className="absolute max-w-none rounded-lg right-0 top-[40%] w-28 group-hover:-translate-y-1  ease-in-out duration-300"
+                              className="absolute max-w-none rounded-lg right-0 top-[40%] w-28 group-hover:-translate-y-1 ease-in-out duration-300"
                             />
                           </div>
                         )

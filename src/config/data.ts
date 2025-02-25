@@ -61,3 +61,53 @@ export const commandSidenavLinks: NavLink[] = [
     href: "/flows",
   },
 ];
+
+export const filterCategories = [
+  "All",
+  "Business",
+  "Finance",
+  "CRM",
+  "Shopping",
+  "Social",
+  "Travel",
+  "Health",
+  "Fitness",
+  "Education",
+  "Entertainment",
+  "News",
+  "Utilities",
+  "Productivity",
+  "Photo & Video",
+  "Music",
+  "Books",
+  "Lifestyle",
+  "Food & Drink",
+  "Sports",
+  "Games",
+  "Weather",
+  "Developer Tools",
+  "Networking",
+];
+
+export const tabs = [
+  {
+    title: "Apps",
+    content: "Content for Apps",
+  },
+  {
+    title: "Screens",
+    content: "Content for Screens",
+  },
+  {
+    title: "Marketing Pages",
+    content: "Content for Marketing Pages",
+  },
+  {
+    title: "UI Elements",
+    content: "Content for UI Elements",
+  },
+  {
+    title: "Flows",
+    content: "Content for Flows",
+  },
+];

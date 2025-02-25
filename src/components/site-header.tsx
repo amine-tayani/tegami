@@ -17,6 +17,7 @@ export default function SiteHeader() {
           <nav className="lg:flex items-center gap-4 text-sm xl:gap-6 hidden ">
             {mainNav.map((screen) => (
               <a
+                key={screen.title}
                 href={`/${screen.href}`}
                 className={cn(
                   "last:last-of-type:text-foreground transition-colors text-base font-medium hover:text-foreground text-foreground/80"
