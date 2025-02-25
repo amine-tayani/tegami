@@ -1,4 +1,5 @@
 import SiteHeader from "./components/site-header";
+import UnderlineTabs from "./components/underline-tabs";
 
 export default function App() {
   return (
@@ -24,6 +25,14 @@ export default function App() {
           Web
         </a>
       </div>
+      <main className="flex grow flex-col">
+        <div className="z-0 flex flex-col gap-y-5 px-8 lg:px-36 pt-8">
+          <h1 className="text-4xl leading-11 tracking-tight font-bold md:text-5xl">
+            Discover
+          </h1>
+          <UnderlineTabs />
+        </div>
+      </main>
     </div>
   );
 }
