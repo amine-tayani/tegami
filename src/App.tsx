@@ -30,6 +30,7 @@ export default function App() {
           <h1 className="text-4xl leading-11 tracking-tight font-bold md:text-5xl">
             Discover
           </h1>
+
           <UnderlineTabs />
         </div>
       </main>

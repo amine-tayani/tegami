@@ -5,3 +5,12 @@ export type NavLink = {
   icon: LucideIcon;
   href?: string;
 };
+
+export type CategoryFilter = {
+  title: string;
+  description: string;
+  images: {
+    src: string;
+    alt: string;
+  }[];
+};

@@ -13,9 +13,13 @@ import {
 import { cn } from "@/lib/utils";
 import { commandSidenavLinks } from "@/config/data";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import useCommandStore from "@/store";
 
 export function CommandMenu({ ...props }: DialogProps) {
-  const [open, setOpen] = React.useState(false);
+  const isCommandMenuOpen = useCommandStore((state) => state.isCommandMenuOpen);
+  const setIsCommandMenuOpen = useCommandStore(
+    (state) => state.setIsCommandMenuOpen
+  );
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -29,8 +33,8 @@ export function CommandMenu({ ...props }: DialogProps) {
           return;
         }
 
+        setIsCommandMenuOpen(!isCommandMenuOpen);
         e.preventDefault();
-        setOpen((open) => !open);
       }
     };
 
@@ -47,7 +51,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           "cursor-pointer transition-colors ease-out relative h-10 lg:h-12 w-full",
           "rounded-full text-base font-medium text-muted-foreground bg-menu-background shadow-none"
         )}
-        onClick={() => setOpen(true)}
+        onClick={() => setIsCommandMenuOpen(true)}
         {...props}
       >
         <Search className="size-4 md:size-6 ml-3 mr-1 text-foreground" />
@@ -55,7 +59,10 @@ export function CommandMenu({ ...props }: DialogProps) {
         <span className="inline-flex lg:hidden">Search...</span>
       </Button>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        open={isCommandMenuOpen}
+        onOpenChange={setIsCommandMenuOpen}
+      >
         <CommandInput
           placeholder="Web Apps, Screens, UI Elements, Flows or keywords..."
           className="text-base"
