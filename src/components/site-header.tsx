@@ -8,8 +8,8 @@ import { mainNav } from "@/config/data";
 
 export default function SiteHeader() {
   return (
-    <div className="container-wrapper px-4">
-      <div className="container flex h-20 items-center justify-between">
+    <div className="container-wrapper px-4 fixed top-0 inset-x-0 z-50">
+      <div className="container flex h-20 items-center justify-between bg-main-background">
         <div className="mr-4 flex items-center">
           <a href="/" className=" lg:mr-10">
             <TegamiLogo />

@@ -26,12 +26,25 @@ export default function App() {
         </a>
       </div>
       <main className="flex grow flex-col">
-        <div className="z-0 flex flex-col gap-y-5 px-8 lg:px-36 pt-8">
-          <h1 className="text-4xl leading-11 tracking-tight font-bold md:text-5xl">
+        <div className="z-0 flex flex-col gap-y-5 px-8 lg:px-16 pt-8">
+          <h1 className="text-4xl leading-11 tracking-tight font-bold md:text-5xl mt-20">
             Discover
           </h1>
 
           <UnderlineTabs />
+          <div className="flex flex-1 flex-col gap-4 py-4">
+            <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+              <div className="aspect-video rounded-[30px] bg-muted/50" />
+            </div>
+          </div>
         </div>
       </main>
     </div>

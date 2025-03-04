@@ -1,7 +1,7 @@
 import useCommandStore from "@/store";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { ArrowRight, Settings2 } from "lucide-react";
+import { Settings2 } from "lucide-react";
 import { filterCategories, tabs } from "@/config/data";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
@@ -30,7 +30,7 @@ export default function UnderlineTabs() {
         <TabsContent key={index} value={tab.title}>
           <div className="relative min-w-0">
             <div className="relative flex items-center">
-              <ScrollArea className="w-full">
+              <ScrollArea className="w-[1430px]">
                 <div className="flex w-fit gap-x-2 mt-4">
                   <div className="flex">
                     <Button
@@ -64,16 +64,19 @@ export default function UnderlineTabs() {
                           <span className="truncate">{category.title}</span>
                         </Button>
                       </HoverCardTrigger>
-                      <HoverCardContent className="border-none flex flex-col gap-5 rounded-xl p-4 shadow-xl bg-[#2c2c2c]  w-[400px] mt-2">
-                        <div className="grid grid-flow-col gap-3">
-                          <div className="p-3 rounded-xl bg-neutral-800">
+                      <HoverCardContent
+                        hidden={category.title === "All"}
+                        className="border-none flex flex-col gap-5 rounded-xl p-4 shadow-xl bg-menu-background w-[400px] mt-2"
+                      >
+                        <div className="grid grid-flow-col gap-3 ">
+                          <div className="p-3 rounded-xl bg-[#2c2c2c]">
                             <img
                               className=" border-0 object-cover rounded-2xl"
                               src="https://bytescale.mobbin.com/FW25bBB/image/content/app_screens/992dd1ac-0a8d-4fe5-91ff-27b0d600365d.png?f=webp&w=1920&q=85&fit=shrink-cover"
                               alt="Avatar"
                             />
                           </div>
-                          <div className="p-3 rounded-xl bg-neutral-800">
+                          <div className="p-3 rounded-xl bg-[#2c2c2c]">
                             <img
                               className=" border-0 object-cover rounded-2xl"
                               src="https://bytescale.mobbin.com/FW25bBB/image/content/app_screens/992dd1ac-0a8d-4fe5-91ff-27b0d600365d.png?f=webp&w=1920&q=85&fit=shrink-cover"
@@ -90,13 +93,6 @@ export default function UnderlineTabs() {
                 </div>
                 <ScrollBar className="h-0" orientation="horizontal" />
               </ScrollArea>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden lg:flex flex-none rounded-full mt-3 ml-3"
-              >
-                <ArrowRight className="size-5" />
-              </Button>
             </div>
           </div>
         </TabsContent>
