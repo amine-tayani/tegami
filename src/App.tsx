@@ -1,4 +1,6 @@
+import ScreenCarousel from "./components/screen-carousel";
 import SiteHeader from "./components/site-header";
+
 import UnderlineTabs from "./components/underline-tabs";
 
 export default function App() {
@@ -32,19 +34,7 @@ export default function App() {
           </h1>
 
           <UnderlineTabs />
-          <div className="flex flex-1 flex-col gap-4 py-4">
-            <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-              <div className="aspect-video rounded-[30px] bg-muted/50" />
-            </div>
-          </div>
+          <ScreenCarousel />
         </div>
       </main>
     </div>
