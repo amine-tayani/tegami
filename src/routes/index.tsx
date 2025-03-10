@@ -1,12 +1,14 @@
-import ScreenCarousel from "./components/screen-carousel";
-import SiteHeader from "./components/site-header";
+import ScreenCarousel from "@/components/screen-carousel";
+import UnderlineTabs from "@/components/underline-tabs";
+import { createFileRoute } from "@tanstack/react-router";
 
-import UnderlineTabs from "./components/underline-tabs";
+export const Route = createFileRoute("/")({
+  component: Index,
+});
 
-export default function App() {
+function Index() {
   return (
     <div>
-      <SiteHeader />
       <div className="flex items-center pb-3 gap-x-6 px-8 border-b md:hidden">
         <a
           className="text-muted-foreground font-medium hover:text-foreground transition-colors ease-out focus-visible:ring-4 focus-visible:ring-blue-200/50"

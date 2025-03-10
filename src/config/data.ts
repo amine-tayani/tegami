@@ -15,7 +15,7 @@ export const mainNav: NavLink[] = [
   {
     title: "iOS",
     icon: AppleIcon,
-    href: "/",
+    href: "/ios",
   },
   {
     title: "Android",
@@ -24,7 +24,7 @@ export const mainNav: NavLink[] = [
   },
   {
     title: "Web",
-    href: "/web",
+    href: "/",
     icon: Laptop,
   },
 ];

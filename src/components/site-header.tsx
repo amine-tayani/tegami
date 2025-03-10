@@ -5,26 +5,31 @@ import UserMenu from "./user-menu";
 import { CommandMenu } from "./command-menu";
 import { TegamiLogo } from "./logo";
 import { mainNav } from "@/config/data";
+import { Link, useLocation } from "@tanstack/react-router";
 
 export default function SiteHeader() {
+  const location = useLocation();
   return (
     <div className="container-wrapper px-4 fixed top-0 inset-x-0 z-50">
       <div className="container flex h-20 items-center justify-between bg-main-background">
         <div className="mr-4 flex items-center">
-          <a href="/" className=" lg:mr-10">
+          <Link to="/" className="lg:mr-10">
             <TegamiLogo />
-          </a>
+          </Link>
           <nav className="lg:flex items-center gap-4 text-sm xl:gap-6 hidden ">
             {mainNav.map((screen) => (
-              <a
+              <Link
                 key={screen.title}
-                href={`/${screen.href}`}
+                to={"/" + screen.href}
                 className={cn(
-                  "last:last-of-type:text-foreground transition-colors text-base font-medium hover:text-foreground text-foreground/80"
+                  "transition-colors text-base font-medium hover:text-primary",
+                  location.pathname === screen.href
+                    ? "text-foreground underline decoration-2 underline-offset-4"
+                    : "text-foreground/70"
                 )}
               >
                 {screen.title}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
